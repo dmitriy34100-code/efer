@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Blast Pro 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcome-screen" class="overlay">
+        <div class="glass-card">
+            <h1>Block Blast</h1>
+            <p>Набирай очки, чтобы достичь цели!</p>
+            <button id="start-btn" class="btn-main">Играть</button>
+        </div>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <div class="mission-control">
+            <div id="target-text">Цель: <span id="target-score">100</span></div>
+            <div class="score-main">Счет: <span id="score">0</span></div>
+        </div>
+        
+        <div id="board" class="grid"></div>
+        <div id="shapes-container" class="shapes-shelf"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+:root {
+    --bg: #05070a;
+    --grid-bg: #111827;
+    --cell-empty: #1f2937;
+    --primary: #6366f1;
+}
+
+body {
+    margin: 0; background: var(--bg); color: white;
+    font-family: 'Inter', sans-serif; display: flex;
+    justify-content: center; align-items: center; height: 100vh; overflow: hidden;
+    user-select: none;
+}
+
+.overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+    display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+
+.glass-card {
+    background: rgba(255,255,255,0.05); backdrop-filter: blur(20px);
+    padding: 50px; border-radius: 40px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-main {
+    background: var(--primary); color: white; border: none;
+    padding: 15px 50px; font-size: 1.2rem; font-weight: bold;
+    border-radius: 20px; cursor: pointer; transition: 0.3s;
+}
+
+.mission-control { text-align: center; margin-bottom: 20px; }
+#target-text { color: #10b981; font-weight: bold; font-size: 1.2rem; margin-bottom: 5px; }
+.score-main { font-size: 2.5rem; font-weight: 900; }
+
+.grid {
+    display: grid; grid-template-columns: repeat(8, 48px);
+    grid-template-rows: repeat(8, 48px); gap: 4px;
+    background: var(--grid-bg); padding: 10px; border-radius: 12px;
+    position: relative;
+}
+
+.cell { width: 48px; height: 48px; background: var(--cell-empty); border-radius: 4px; transition: 0.1s; }
+.cell.preview { background: rgba(255, 255, 255, 0.1); }
+
+/* Цвета блоков */
+.c1 { background: #ff4757 !important; } .c2 { background: #2ed573 !important; }
+.c3 { background: #1e90ff !important; } .c4 { background: #ffa502 !important; }
+.c5 { background: #ae1eff !important; }
+
+.shapes-shelf { display: flex; gap: 20px; margin-top: 30px; height: 120px; }
+
+.shape { position: relative; display: grid; gap: 2px; cursor: grab; }
+.shape.dragging { position: fixed; pointer-events: none; z-index: 999; transform: scale(1.1); opacity: 0.8; }
+
+.hidden { display: none !important; }
